@@ -1,13 +1,11 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
-from chap02.user_form import UserForm
-
 
 class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = uic.loadUi("chap01/chap01.ui")
+        self.ui = uic.loadUi("chap01.ui")
         self.ui.btn_ok.clicked.connect(self.showProp)
         self.ui.show()
 
@@ -29,8 +27,7 @@ class MyApp(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication([])
-    # w = MyApp()
-    w= UserForm()
+    w = MyApp()
     app.exec()
 
 
