@@ -83,7 +83,6 @@ class DepartUI(QWidget):
         self.init_item()
 
 
-
     def get_item_from_le(self):
         no    = self.ui.le_no.text()
         name  = self.ui.le_name.text()
@@ -101,7 +100,6 @@ class DepartUI(QWidget):
         item_floor = QTableWidgetItem()
         item_floor.setTextAlignment(Qt.AlignCenter)
         item_floor.setData(Qt.DisplayRole, floor)
-
         return item_no, item_name, item_floor
 
 

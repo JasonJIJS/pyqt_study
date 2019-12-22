@@ -1,20 +1,50 @@
 from PyQt5.QtWidgets import QApplication
-
 from application_coffee_practice.ui.product import ProductUI
-from application_coffee_practice.ui.sale import SaleUI
-from application_coffee_practice.ui.saledetail import SaledetailUI
 
 if __name__ == "__main__":
     app = QApplication([])
     w = ProductUI()
-    # w = SaleUI()
-
-    # w = SaledetailUI()
     app.exec_()
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # w = SaleUI()
+    # w = SaleUI()
+    # w = SaledetailUI()
 
 
     # 19/12/16 select는 되니깐 select 먼저 UI 연결해 보자

@@ -1,30 +1,25 @@
 import inspect
-
 from mysql.connector import Error
-
 from application_coffee_practice.dao.abs_dao import Dao
-
 insert_sql = "Insert into product values( %s, %s)"
-update_sql = "UPDATE product SET code = %s, name = %s WHERE code = %s"
+update_sql = "UPDATE product SET name =%s WHERE code=%s"
 delete_sql = "DELETE FROM product WHERE code = %s"
 select_sql = "SELECT code, name FROM product"
-select_sql_where = select_sql + " where code = %s"
-
+select_sql_where = select_sql + " WHERE code=%s"
 
 class ProductDao(Dao):
-                                # code, name
     def insert_item(self, code = None, name = None):
         print("\n_____ {}() _____".format(inspect.stack()[0][3]))
-        args = (code, name)
+        args = (str.upper(code), name)
         try:
             super().do_query(query=insert_sql, kargs=args)
             return True
         except Error:
             return False
 
-    def update_item(self, code = None, name = None, updatecode = None):
+    def update_item(self, name = None, code = None):
         print("\n_____ {}() _____".format(inspect.stack()[0][3]))
-        args = (code, name, updatecode)
+        args = (name, code)
         try:
             self.do_query(query=update_sql, kargs=args)
             return True
